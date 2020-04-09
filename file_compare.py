@@ -1,5 +1,16 @@
 import os
+import difflib
 import argparse
+
+
+def string_similar(s1, s2):
+    """
+    对比s1 和 s2相识度
+    :param s1:
+    :param s2:
+    :return: 相识度百分比，float
+    """
+    return difflib.SequenceMatcher(None, s1, s2).quick_ratio()
 
 
 def read_file(filename):
